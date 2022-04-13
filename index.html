@@ -74,7 +74,7 @@ https://rucobloog.www2.jp/2020/12/21/ar-jsthree-js%E3%81%A7webar1/
                     }, 2000);
                 });
                 const arToolkitContext = new THREEx.ArToolkitContext({
-                    cameraParametersUrl: 'data/camera_para.dat',
+                    cameraParametersUrl: './camera_para.dat',
                     detectionMode: 'mono'
                 });
                 arToolkitContext.init(() => {
@@ -86,7 +86,7 @@ https://rucobloog.www2.jp/2020/12/21/ar-jsthree-js%E3%81%A7webar1/
                 scene.add(marker1);
                 const arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, marker1, {
                     type: 'pattern',
-                    patternUrl: 'data/patt.hiro',
+                    patternUrl: './pattern-marker.patt',
                 });
 
                 //レンダリング
@@ -107,7 +107,7 @@ https://rucobloog.www2.jp/2020/12/21/ar-jsthree-js%E3%81%A7webar1/
             //gltf
             const gltfloader = new THREE.GLTFLoader();
 
-            gltfloader.load('./cube_medium.gltf',function(gltf){
+            gltfloader.load('./cube_medium.glb',function(gltf){
                 marker1.add(gltf.scene);
             });
 
